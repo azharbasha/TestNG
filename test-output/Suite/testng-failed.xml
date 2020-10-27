@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="Academy.listenrs"/>
+    <listener class-name="resources.ExtentReporterNG"/>
+  </listeners>
+  <test name="HomePage">
+    <classes>
+      <class name="Academy.Homepage"/>
+    </classes>
+  </test> <!-- HomePage -->
+  <test name="ValidateTitle">
+    <classes>
+      <class name="Academy.ValidateTitle"/>
+    </classes>
+  </test> <!-- ValidateTitle -->
+  <test name="validateNavbar">
+    <classes>
+      <class name="Academy.validateNavbar"/>
+    </classes>
+  </test> <!-- validateNavbar -->
+  <test name="ValidateTitle(failed)">
+    <classes>
+      <class name="Academy.validateNavbar">
+        <methods>
+          <include name="initilize"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Academy.validateNavbar -->
+      <class name="Academy.ValidateTitle">
+        <methods>
+          <include name="basePageNavigation"/>
+          <include name="initilize"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Academy.ValidateTitle -->
+      <class name="Academy.Homepage">
+        <methods>
+          <include name="initilize"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Academy.Homepage -->
+    </classes>
+  </test> <!-- ValidateTitle(failed) -->
+</suite> <!-- Failed suite [Suite] -->
